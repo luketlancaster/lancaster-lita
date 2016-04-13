@@ -1,3 +1,11 @@
+require 'dotenv'
+
+
+Dotenv.tap do |de|
+    de.load(ENV['LITA_ENV']) if ENV['LITA_ENV']
+    de.load
+end
+
 Lita.configure do |config|
   # Config for shell adapter
   config.robot.name = ENV['LITA_NAME']
@@ -23,9 +31,10 @@ Lita.configure do |config|
   config.adapters.slack.token = ENV['SLACK_TOKEN']
 
   # Redis
-  config.redis.host = ENV['REDIS_HOST']
-  config.redis.port = ENV['REDIS_PORT']
-
+  # config.redis.host = ENV['REDIS_HOST']
+  # config.redis.port = ENV['REDIS_PORT']
+  config.redis[:url] = ENV['REDISTOGO_URL']
+  config.http.port = ENV['PORT']
   ## Example: Set options for the chosen adapter.
   # config.adapter.username = "myname"
   # config.adapter.password = "secret"
