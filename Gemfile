@@ -6,3 +6,4 @@ gem "dotenv"
 
 
 gem "lita-xkcd"
+gem "lita-mtg"
