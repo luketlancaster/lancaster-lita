@@ -29,7 +29,7 @@ Lita.configure do |config|
 
   # Config for slack adapter
   config.adapters.slack.token = ENV['SLACK_TOKEN']
-  config.http.port = $PORT
+  config.http.port = ENV['PORT']
   # Redis
   # config.redis.host = ENV['REDIS_HOST']
   # config.redis.port = ENV['REDIS_PORT']
