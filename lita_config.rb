@@ -33,7 +33,7 @@ Lita.configure do |config|
   # Redis
   # config.redis.host = ENV['REDIS_HOST']
   # config.redis.port = ENV['REDIS_PORT']
-  # config.redis[:url] = ENV['REDISTOGO_URL']
+  config.redis[:url] = ENV['REDISTOGO_URL']
   # config.http.port = ENV['REDIS_PORT']
   ## Example: Set options for the chosen adapter.
   # config.adapter.username = "myname"
